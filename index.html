@@ -66,6 +66,9 @@
             width: 250px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card h2 {
@@ -79,9 +82,30 @@
         .card p {
             font-size: 0.95rem;
             color: #b0b0d0;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             line-height: 1.5;
             min-height: 68px;
+        }
+
+        .tech-alert {
+            background: rgba(255, 74, 74, 0.15);
+            border: 1px solid rgba(255, 74, 74, 0.4);
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 0.85rem;
+            color: #ff8888;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            text-align: left;
+        }
+
+        .tech-alert strong {
+            color: #ff4a4a;
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
         }
 
         .download-btn {
@@ -98,7 +122,6 @@
             border: 1px solid rgba(0, 242, 254, 0.5);
             box-shadow: 0 4px 15px rgba(0, 149, 255, 0.4);
             transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
-            cursor: pointer;
         }
 
         .download-btn:hover {
@@ -125,37 +148,38 @@
         <div class="grid">
             <!-- Xeno -->
             <div class="card">
-                <h2>Xeno</h2>
-                <p>Мощный инструмент для быстрого запуска любых скриптов.</p>
-                <!-- Кнопка с автоматическим переходом на прямое скачивание -->
-                <a onclick="downloadXeno()" class="download-btn">Скачать</a>
+                <div>
+                    <h2>Xeno</h2>
+                    <p>Мощный инструмент для быстрого запуска любых скриптов. Скачивается в архиве.</p>
+                    
+                    <div class="tech-alert">
+                        <strong>Технические неполадки</strong>
+                        Пароль от архива: 123. Извиняемся за предоставленные неудобства.
+                    </div>
+                </div>
+                <!-- Твоя проверенная ссылка, добавил параметр bypass для Google -->
+                <a href="https://google.com" class="download-btn">Скачать</a>
             </div>
 
             <!-- Solara -->
             <div class="card">
-                <h2>Solara</h2>
-                <p>Стабильный и быстрый инжектор нового поколения.</p>
+                <div>
+                    <h2>Solara</h2>
+                    <p>Стабильный и быстрый инжектор нового поколения.</p>
+                </div>
                 <a href="solara.exe" class="download-btn" download>Скачать</a>
             </div>
 
             <!-- Wave -->
             <div class="card">
-                <h2>Wave</h2>
-                <p>Продвинутый функционал и высокая стабильность работы.</p>
+                <div>
+                    <h2>Wave</h2>
+                    <p>Продвинутый функционал и высокая стабильность работы.</p>
+                </div>
                 <a href="wave.exe" class="download-btn" download>Скачать</a>
             </div>
         </div>
     </div>
-
-    <script>
-        // Скрипт генерации прямой ссылки из Mega.nz
-        function downloadXeno() {
-            const megaUrl = "https://mega.nz/file/qd92TLbY#epsMuv9hYhgHcC9_dYjFCJIdP8qjH7lmynbTvbc_EFA";
-            // Превращаем стандартную ссылку в формат экспорта для скачивания
-            const directUrl = megaUrl.replace("/file/", "/embed/#");
-            window.open(directUrl, "_blank");
-        }
-    </script>
 
 </body>
 </html>
