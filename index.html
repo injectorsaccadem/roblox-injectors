@@ -98,6 +98,7 @@
             border: 1px solid rgba(0, 242, 254, 0.5);
             box-shadow: 0 4px 15px rgba(0, 149, 255, 0.4);
             transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .download-btn:hover {
@@ -126,15 +127,14 @@
             <div class="card">
                 <h2>Xeno</h2>
                 <p>Мощный инструмент для быстрого запуска любых скриптов.</p>
-                <!-- Прямая ссылка для мгновенного скачивания без открытия MediaFire -->
-                <a href="https://mediafire.com" class="download-btn">Скачать</a>
+                <!-- Кнопка с автоматическим переходом на прямое скачивание -->
+                <a onclick="downloadXeno()" class="download-btn">Скачать</a>
             </div>
 
             <!-- Solara -->
             <div class="card">
                 <h2>Solara</h2>
                 <p>Стабильный и быстрый инжектор нового поколения.</p>
-                <!-- Будет скачиваться из корня вашего сайта на GitHub -->
                 <a href="solara.exe" class="download-btn" download>Скачать</a>
             </div>
 
@@ -142,11 +142,20 @@
             <div class="card">
                 <h2>Wave</h2>
                 <p>Продвинутый функционал и высокая стабильность работы.</p>
-                <!-- Будет скачиваться из корня вашего сайта на GitHub -->
                 <a href="wave.exe" class="download-btn" download>Скачать</a>
             </div>
         </div>
     </div>
+
+    <script>
+        // Скрипт генерации прямой ссылки из Mega.nz
+        function downloadXeno() {
+            const megaUrl = "https://mega.nz/file/qd92TLbY#epsMuv9hYhgHcC9_dYjFCJIdP8qjH7lmynbTvbc_EFA";
+            // Превращаем стандартную ссылку в формат экспорта для скачивания
+            const directUrl = megaUrl.replace("/file/", "/embed/#");
+            window.open(directUrl, "_blank");
+        }
+    </script>
 
 </body>
 </html>
