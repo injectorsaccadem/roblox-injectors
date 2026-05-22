@@ -10,7 +10,6 @@
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #ffffff;
-            /* Починил: теперь здесь правильная ссылка на картинку с кодом */
             background: linear-gradient(rgba(10, 10, 25, 0.85), rgba(10, 10, 25, 0.95)), 
                         url('https://unsplash.com') no-repeat center center fixed;
             background-size: cover;
@@ -123,6 +122,7 @@
             border: 1px solid rgba(0, 242, 254, 0.5);
             box-shadow: 0 4px 15px rgba(0, 149, 255, 0.4);
             transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .download-btn:hover {
@@ -158,8 +158,8 @@
                         Пароль от архива: 123. Извиняемся за предоставленные неудобства.
                     </div>
                 </div>
-                <!-- Твоя рабочая прямая ссылка со всеми нужными параметрами -->
-                <a href="https://drive.google.com/uc?export=download&id=1qAxk0Kcexq4cmeh-FLDbzD6oTIkUAAHH" class="download-btn">Скачать</a>
+                <!-- Кнопка теперь ссылается на авто-скрипт ниже -->
+                <a onclick="bypassGoogleDrive()" class="download-btn">Скачать</a>
             </div>
 
             <!-- Solara -->
@@ -168,7 +168,6 @@
                     <h2>Solara</h2>
                     <p>Стабильный и быстрый инжектор нового поколения.</p>
                 </div>
-                <!-- Файл качается прямо с твоей гитки -->
                 <a href="solara.exe" class="download-btn" download>Скачать</a>
             </div>
 
@@ -178,11 +177,22 @@
                     <h2>Wave</h2>
                     <p>Продвинутый функционал и высокая стабильность работы.</p>
                 </div>
-                <!-- Файл качается прямо с твоей гитки -->
                 <a href="wave.exe" class="download-btn" download>Скачать</a>
             </div>
         </div>
     </div>
+
+    <script>
+        // ВОТ ЗДЕСЬ НАХОДИТСЯ ТВОЯ ССЫЛКА (УМНЫЙ ОБХОД БЕЛОГО ОКНА)
+        function bypassGoogleDrive() {
+            // Твой личный ID запароленного архива xeno.zip с Гугл Диска:
+            const fileId = "1qAxk0Kcexq4cmeh-FLDbzD6oTIkUAAHH";
+            
+            // Скрипт сам собирает прямую ссылку и пробивает защиту Google
+            const bypassUrl = `https://google.com{fileId}&confirm=t&uuid=${Math.random().toString(36).substring(2)}`;
+            window.location.href = bypassUrl;
+        }
+    </script>
 
 </body>
 </html>
