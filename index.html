@@ -82,30 +82,9 @@
         .card p {
             font-size: 0.95rem;
             color: #b0b0d0;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             line-height: 1.5;
             min-height: 68px;
-        }
-
-        .tech-alert {
-            background: rgba(255, 74, 74, 0.15);
-            border: 1px solid rgba(255, 74, 74, 0.4);
-            border-radius: 8px;
-            padding: 10px;
-            font-size: 0.85rem;
-            color: #ff8888;
-            margin-bottom: 20px;
-            line-height: 1.4;
-            text-align: left;
-        }
-
-        .tech-alert strong {
-            color: #ff4a4a;
-            display: block;
-            margin-bottom: 4px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.5px;
         }
 
         .download-btn {
@@ -122,7 +101,6 @@
             border: 1px solid rgba(0, 242, 254, 0.5);
             box-shadow: 0 4px 15px rgba(0, 149, 255, 0.4);
             transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
-            cursor: pointer;
         }
 
         .download-btn:hover {
@@ -151,15 +129,9 @@
             <div class="card">
                 <div>
                     <h2>Xeno</h2>
-                    <p>Мощный инструмент для быстрого запуска любых скриптов. Скачивается в архиве.</p>
-                    
-                    <div class="tech-alert">
-                        <strong>Технические неполадки</strong>
-                        Пароль от архива: 123. Извиняемся за предоставленные неудобства.
-                    </div>
+                    <p>Мощный инструмент для быстрого запуска любых скриптов. Чистый EXE-файл.</p>
                 </div>
-                <!-- Кнопка теперь ссылается на авто-скрипт ниже -->
-                <a onclick="bypassGoogleDrive()" class="download-btn">Скачать</a>
+                <a href="xeno.exe" class="download-btn" download>Скачать</a>
             </div>
 
             <!-- Solara -->
@@ -181,18 +153,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // ВОТ ЗДЕСЬ НАХОДИТСЯ ТВОЯ ССЫЛКА (УМНЫЙ ОБХОД БЕЛОГО ОКНА)
-        function bypassGoogleDrive() {
-            // Твой личный ID запароленного архива xeno.zip с Гугл Диска:
-            const fileId = "1qAxk0Kcexq4cmeh-FLDbzD6oTIkUAAHH";
-            
-            // Скрипт сам собирает прямую ссылку и пробивает защиту Google
-            const bypassUrl = `https://google.com{fileId}&confirm=t&uuid=${Math.random().toString(36).substring(2)}`;
-            window.location.href = bypassUrl;
-        }
-    </script>
 
 </body>
 </html>
